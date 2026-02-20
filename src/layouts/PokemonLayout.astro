@@ -1,0 +1,20 @@
+---
+import "../assets/app.css";
+
+const { frontmatter } = Astro.props;
+---
+
+<div class="hero h-full">
+    <div class="hero-content text-center">
+        <div class="max-w-md">
+            <h1 class="text-5xl font-bold">{frontmatter.title}</h1>
+            <p class="py-6">
+                {frontmatter.description}
+            </p>
+            <img src={frontmatter.imageSrc} />
+        </div>
+    </div>
+</div>
+<div id="test"></div>
+
+<slot />

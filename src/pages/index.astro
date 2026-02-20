@@ -1,17 +1,18 @@
 ---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
 
+const pokemon = await getCollection("pokemon");
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro Site</h1>
-	</body>
-</html>
+<Layout title="Home">
+    <div class="flex gap-4 flex-col">
+        {
+            pokemon.map((mon) => (
+                <div>
+                    <a href={mon.id}>{mon.data.title}</a>
+                </div>
+            ))
+        }
+    </div>
+</Layout>

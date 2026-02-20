@@ -1,0 +1,14 @@
+import daisyui from "daisyui"
+
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte}'],
+  theme: {
+    extend: {},
+  },
+  plugins: [daisyui],
+  // Optional: DaisyUI config
+  daisyui: {
+    themes: ["light", "dark", "cupcake"],
+  },
+}
